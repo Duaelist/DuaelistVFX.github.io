@@ -7,7 +7,7 @@
   var videos = [].slice.call(document.querySelectorAll('.panel__media video'));
   var panels = [].slice.call(document.querySelectorAll('.panel'));
   var ticking = false;
-
+  
   videos.forEach(function (v) {
     v.addEventListener('playing', function () { v.classList.add('is-playing'); });
     v.addEventListener('pause', function () { v.classList.remove('is-playing'); });
