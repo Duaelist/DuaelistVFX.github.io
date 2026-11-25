@@ -1,7 +1,7 @@
 # One entry per poster card in the "Most recent works" strip.
 # Clicking a card opens an overlay with the detail fields below.
 #
-# Card fields:
+# Card fields: 
 #   title, role, year, image   (image optional; blank = placeholder block)
 #   banner     - optional wide image for the top of the overlay (defaults to image)
 # Overlay fields (all optional):
