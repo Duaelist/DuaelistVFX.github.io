@@ -12,6 +12,7 @@
   --label: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
 
+
 * { box-sizing: border-box; }
 html { background: var(--page); color-scheme: dark; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
