@@ -1,0 +1,44 @@
+<!doctype html>
+{% assign lang = page.lang | default: site.lang | default: "en" %}
+{% assign v = site.data.vfx[lang] %}
+{% assign pre = "" %}{% if lang == "es" %}{% assign pre = "/es" %}{% endif %}
+{% if lang == "es" %}{% assign other_url = "/" %}{% else %}{% assign other_url = "/es/" %}{% endif %}
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.title != "" %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/vfx.css' | relative_url }}">
+</head>
+<body id="top">
+
+  <header class="bar">
+    <div class="bar__group bar__group--start">
+      <a class="pill{% if page.nav == 'about' %} is-active{% endif %}" href="{{ pre | append: '/about/' | relative_url }}">{{ v.about }}</a>
+      <a class="pill" href="{{ other_url | relative_url }}" hreflang="{% if lang == 'es' %}en{% else %}es{% endif %}" lang="{% if lang == 'es' %}en{% else %}es{% endif %}" aria-label="{{ v.switch_lang_label }}">{{ v.switch_lang }}</a>
+    </div>
+    <div class="bar__group bar__group--mid">
+      <button type="button" class="pill" data-anim-toggle aria-pressed="false" data-label-on="{{ v.anim_on }}" data-label-off="{{ v.anim_off }}">{{ v.anim_off }}</button>
+      <a class="pill" href="#top">{{ v.top }}</a>
+    </div>
+    <nav class="bar__group bar__group--end" aria-label="{{ v.main_nav }}">
+      <a class="pill{% if page.nav == 'home' %} is-active{% endif %}" href="{{ pre | append: '/' | relative_url }}"{% if page.nav == 'home' %} aria-current="page"{% endif %}>{{ v.home }}</a>
+      <a class="pill{% if page.nav == 'effects' %} is-active{% endif %}" href="{{ pre | append: '/effects/' | relative_url }}"{% if page.nav == 'effects' %} aria-current="page"{% endif %}>{{ v.effects }}</a>
+      <a class="pill{% if page.nav == 'game-projects' %} is-active{% endif %}" href="{{ pre | append: '/game-projects/' | relative_url }}"{% if page.nav == 'game-projects' %} aria-current="page"{% endif %}>{{ v.game_projects }}</a>
+      <a class="pill{% if page.nav == 'other-work' %} is-active{% endif %}" href="{{ pre | append: '/other-work/' | relative_url }}"{% if page.nav == 'other-work' %} aria-current="page"{% endif %}>{{ v.other_work }}</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="foot">&copy; {{ 'now' | date: '%Y' }} by {{ site.title }}</footer>
+
+  <script src="{{ '/assets/js/vfx.js' | relative_url }}" defer></script>
+</body>
+</html>

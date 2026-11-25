@@ -1,0 +1,21 @@
+# Home panels. Add the media later: "image" is the still shown by default,
+# "video" (optional, muted loop) only loads and plays when ANIMATION is ON.
+# Paths are relative to the site root, e.g. /assets/img/panels/effects.jpg
+- id: effects
+  title: EFFECTS
+  title_es: EFECTOS
+  url: /effects/
+  image: ""
+  video: ""
+- id: game-projects
+  title: GAME_PROJECTS
+  title_es: PROYECTOS_DE_JUEGO
+  url: /game-projects/
+  image: ""
+  video: ""
+- id: other-work
+  title: OTHER_WORK
+  title_es: OTROS_TRABAJOS
+  url: /other-work/
+  image: ""
+  video: ""

@@ -1,0 +1,19 @@
+{% assign lang = page.lang | default: site.lang | default: "en" %}
+{% assign v = site.data.vfx[lang] %}
+{% assign pre = "" %}{% if lang == "es" %}{% assign pre = "/es" %}{% endif %}
+{% for p in site.data.panels %}
+  {% if lang == "es" %}{% assign title = p.title_es | default: p.title %}{% else %}{% assign title = p.title %}{% endif %}
+  <section class="panel" style="--len: {{ title | size }}" aria-labelledby="panel-{{ p.id }}">
+    {% if p.image != "" or p.video != "" %}
+    <div class="panel__media" aria-hidden="true">
+      {% if p.image != "" %}<img src="{{ p.image | relative_url }}" alt="" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">{% endif %}
+      {% if p.video != "" %}<video muted loop playsinline preload="none" data-src="{{ p.video | relative_url }}"></video>{% endif %}
+    </div>
+    {% endif %}
+    <div class="panel__scrim"></div>
+    <div class="panel__body">
+      <h2 class="panel__title" id="panel-{{ p.id }}">{{ title }}</h2>
+      <a class="pill pill--lg" href="{{ pre | append: p.url | relative_url }}">{{ v.view_work }}</a>
+    </div>
+  </section>
+{% endfor %}

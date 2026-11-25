@@ -1,0 +1,27 @@
+# Interface text for the VFX site (nav pills, buttons). Keys: en / es.
+en:
+  about: ABOUT
+  anim_on: "ANIMATION: ON"
+  anim_off: "ANIMATION: OFF"
+  top: BACK TO TOP
+  home: HOME
+  effects: EFFECTS
+  game_projects: GAME_PROJECTS
+  other_work: OTHER_WORK
+  view_work: VIEW WORK
+  switch_lang: ES
+  switch_lang_label: Ver esta página en español
+  main_nav: Main navigation
+es:
+  about: ACERCA
+  anim_on: "ANIMACIÓN: ON"
+  anim_off: "ANIMACIÓN: OFF"
+  top: ARRIBA
+  home: INICIO
+  effects: EFECTOS
+  game_projects: PROYECTOS_DE_JUEGO
+  other_work: OTROS_TRABAJOS
+  view_work: VER TRABAJO
+  switch_lang: EN
+  switch_lang_label: View this page in English
+  main_nav: Navegación principal
